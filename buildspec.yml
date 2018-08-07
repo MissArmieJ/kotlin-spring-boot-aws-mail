@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - sudo apt-get update
+  build:
+    commands:
+      - chmod +x gradlew
+      - ./gradlew clean build --debug
+artifacts:
+  files:
+     - ./build/libs/application.jar
+  discard-paths: yes
